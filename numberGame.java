@@ -1,5 +1,5 @@
 //Task 1
-package codesoft_task;
+//package codesoft_task;
 import java.util.Scanner;
 import java.util.Random;
 public class numberGame {
@@ -14,7 +14,7 @@ static int maxAttempts = 5;
         int userGuess = scanner.nextInt();
 
         int numberOfAttempts = 1;
-        while (userGuess != generatedNumber && numberOfAttempts < maxAttempts) {
+        while (userGuess != generatedNumber && numberOfAttempts <= maxAttempts) {
             if (userGuess > generatedNumber) {
                 System.out.println("Your guess is too high.");
             } else {
@@ -26,12 +26,12 @@ static int maxAttempts = 5;
             numberOfAttempts++;
         }
 
-        if (userGuess == generatedNumber) {
+        if (userGuess == generatedNumber)
             System.out.println("Congratulations! You guessed the correct number.");
-        } else {
+        else
             System.out.println("Sorry, the correct number was " + generatedNumber + ".");
-        }
-        int score = maxAttempts - numberOfAttempts;
+        
+        int score = maxAttempts - numberOfAttempts + 1;
         System.out.println("Your score is " + score + ".");
         System.out.println("Do you want to play again? (y/n)");
         char playAgain = scanner.next().charAt(0);
